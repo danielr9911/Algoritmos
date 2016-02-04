@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 /**
  * The test class DigraphALTest.
  *
- * @author Daniel Rend�n Monta�o
+ * @author Daniel Rendon Montano
  * @author Juan Daniel Morales Arias
  * @author Cristyam Sepulveda Vasquez
  * @version 04/02/2016

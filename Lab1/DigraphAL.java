@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Esta clase es una implementaci�n de un digrafo usando listas de adyacencia
  *
  * @author Mauricio Toro
- * @author Daniel Rend�n Monta�o
+ * @author Daniel Rendon Montano
  * @author Juan Daniel Morales Arias
  * @author Cristyam Sepulveda Vasquez
  * @version 04/02/2016
