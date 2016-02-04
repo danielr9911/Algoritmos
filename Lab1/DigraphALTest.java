@@ -9,8 +9,10 @@ import java.util.ArrayList;
 /**
  * The test class DigraphALTest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  Daniel Rendón Montaño
+ * @author  Juan Daniel Morales Arias
+ * @author  Cristyam Sepulveda Vasquez
+ * @version 04/02/2016
  */
 public class DigraphALTest
 {

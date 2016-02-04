@@ -1,21 +1,30 @@
 import java.util.ArrayList;
 /**
- * Esta clase es una implementaciÃ³n de un digrafo usando matrices de adyacencia
+ * Esta clase es una implementación de un digrafo usando matrices de adyacencia
  * 
  * @author Mauricio Toro 
- * @version 1
+ * @author  Daniel Rendón Montaño
+ * @author  Juan Daniel Morales Arias
+ * @author  Cristyam Sepulveda Vasquez
+ * @version 04/02/2016
  */
 public class DigraphAM extends Graph
 {
 	private int [][] mat;
 	private ArrayList<Integer> successors;
    
-   public DigraphAM(int size)
+   /**
+    * Constructor de la clase DiagphAM
+    */
+	public DigraphAM(int size)
    {
 	   super(size);
        mat = new int [size][size];   
    }
    
+   /**
+    * 
+    */
    public int getWeight(int source, int destination)
    {
 	   return mat[source][destination];

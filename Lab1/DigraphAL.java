@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 /**
- * Esta clase es una implementaciÃ³n de un digrafo usando listas de adyacencia
+ * Esta clase es una implementación de un digrafo usando listas de adyacencia
  * 
- * @author Mauricio Toro 
- * @version 1
+ * @author  Mauricio Toro 
+ * @author  Daniel Rendón Montaño
+ * @author  Juan Daniel Morales Arias
+ * @author  Cristyam Sepulveda Vasquez
+ * @version 04/02/2016
  */
 public class DigraphAL extends Graph
 {

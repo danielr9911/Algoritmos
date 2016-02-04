@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.params=size
 comment0.target=DigraphAM(int)
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ DiagphAM\r\n
 comment1.params=source\ destination
 comment1.target=int\ getWeight(int,\ int)
+comment1.text=\r\n\ \r\n
 comment2.params=source\ destination\ weight
 comment2.target=void\ addArc(int,\ int,\ int)
 comment3.params=vertex
