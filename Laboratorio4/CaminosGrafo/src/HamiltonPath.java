@@ -1,3 +1,8 @@
+/**
+ * Codigo tomado de internet de la pagina
+ * http://stackoverflow.com/questions/5766160/enumerate-all-hamiltonian-paths
+ * Creada por Tranquocbinh333
+ */
 public class HamiltonPath {
     public static void main(String[] args) {
         HamiltonPath obj = new HamiltonPath();
@@ -89,10 +94,6 @@ public class HamiltonPath {
     }                     //possible hamilton path at new point(ignore newest point try another one)
 
     public void display(int[] x) {
-        //for (int i : x) {
-        //    System.out.print(i + " ");
-        //}
-        //System.out.println();
         System.out.print("( ");
         for (int i : x) {
             System.out.print(i + " ");
