@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
+
 public class bruteRandom {
 
     public static void main(String[] args) {
@@ -28,6 +29,11 @@ public class bruteRandom {
         //System.out.prin tln(prueba);
     }
 
+    /**
+     * Calcula todos los caminos posibles mediante fuerza bruta y numeros Random
+     * @param g Graph
+     * @return Lista de caminos posibles
+     */
     public static ArrayList<ArrayList<Integer>> caminos(Graph g) {
         ArrayList<ArrayList<Integer>> listaCaminos = new ArrayList<ArrayList<Integer>>();
 
@@ -60,6 +66,12 @@ public class bruteRandom {
     }
 
 
+    /**
+     * Retorna si un numero esta en una lista
+     * @param list Lista contenedora
+     * @param num Numero que comprobara
+     * @return boolean
+     */
     public static Boolean inList(ArrayList<Integer> list, int num){
         for(int i=0; i<list.size(); i++){
             if(num==list.get(i)){
@@ -69,6 +81,12 @@ public class bruteRandom {
         return false;
     }
 
+    /**
+     * Retorna si un camino esta en la lista de caminos
+     * @param list Lista de caminos
+     * @param camino camino a comprobar
+     * @return boolean
+     */
     public static Boolean checkCamino(ArrayList<ArrayList<Integer>> list, ArrayList<Integer> camino){
         for(int i=0; i<list.size(); i++){
             ArrayList<Integer> comp = list.get(i);
@@ -90,7 +108,11 @@ public class bruteRandom {
     }
 
 
-
+    /**
+     * Calcula el factorial de un numero
+     * @param numero
+     * @return
+     */
     public static int factorial (int numero) {
         if (numero==0)
             return 1;
