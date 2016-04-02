@@ -1,7 +1,13 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-
+/**
+ * Laboratorio 4 - Caminos de Grafo
+ * Solucion #1 para el problema
+ * @author drendon9
+ * @author bsepulv3
+ * @author jmoral33
+ */
 public class bruteRandom {
 
     public static void main(String[] args) {
@@ -12,12 +18,16 @@ public class bruteRandom {
 
         ArrayList<ArrayList<Integer>> listaCaminos2 = caminos(grafo2);
 
-
+        System.out.println("=================");
+        System.out.println("Caminos para 4 nodos");
+        System.out.println("=================");
         for (int i = 0; i < listaCaminos.size(); i++) {
             System.out.println(listaCaminos.get(i));
         }
 
-        System.out.println("==============");
+        System.out.println("=================");
+        System.out.println("Caminos para 5 nodos");
+        System.out.println("=================");
 
         for (int i = 0; i < listaCaminos2.size(); i++) {
             System.out.println(listaCaminos2.get(i));
@@ -32,7 +42,7 @@ public class bruteRandom {
     /**
      * Calcula todos los caminos posibles mediante fuerza bruta y numeros Random
      * @param g Graph
-     * @return Lista de caminos posibles
+     * @return ArrayList<ArrayList<Integer>> Lista de caminos posibles
      */
     public static ArrayList<ArrayList<Integer>> caminos(Graph g) {
         ArrayList<ArrayList<Integer>> listaCaminos = new ArrayList<ArrayList<Integer>>();

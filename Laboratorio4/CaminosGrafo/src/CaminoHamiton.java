@@ -1,5 +1,9 @@
 /**
- * Created by Daniel on 02/04/2016.
+ * Laboratorio 4 - Caminos de Grafo
+ * Solucion#2 para el problema
+ * @author drendon9
+ * @author bsepulv3
+ * @author jmoral33
  */
 public class CaminoHamiton {
     /**
