@@ -3,30 +3,29 @@ public class HamiltonPath {
         HamiltonPath obj = new HamiltonPath();
 
         int[][] x = {{0, 1, 0, 1, 0},  //Represent the graphs in the adjacent matrix forms
-                {1, 0, 0, 0, 1},
-                {0, 0, 0, 1, 0},
-                {1, 0, 1, 0, 1},
-                {0, 1, 0, 1, 0}};
+                     {1, 0, 0, 0, 1},
+                     {0, 0, 0, 1, 0},
+                     {1, 0, 1, 0, 1},
+                     {0, 1, 0, 1, 0}};
 
         int[][] y = {{0, 1, 0, 0, 0, 1},
-                {1, 0, 1, 0, 0, 1},
-                {0, 1, 0, 1, 1, 0},
-                {0, 0, 1, 0, 0, 0},
-                {0, 0, 1, 0, 0, 1},
-                {1, 1, 0, 0, 1, 0}};
+                     {1, 0, 1, 0, 0, 1},
+                     {0, 1, 0, 1, 1, 0},
+                     {0, 0, 1, 0, 0, 0},
+                     {0, 0, 1, 0, 0, 1},
+                     {1, 1, 0, 0, 1, 0}};
 
         int[][] z = {{0, 1, 1, 0, 0, 1},
-                {1, 0, 1, 0, 0, 0},
-                {1, 1, 0, 1, 0, 1},
-                {0, 0, 1, 0, 1, 0},
-                {0, 0, 0, 1, 0, 1},
-                {1, 0, 1, 0, 1, 0}};
+                     {1, 0, 1, 0, 0, 0},
+                     {1, 1, 0, 1, 0, 1},
+                     {0, 0, 1, 0, 1, 0},
+                     {0, 0, 0, 1, 0, 1},
+                     {1, 0, 1, 0, 1, 0}};
 
         int[][] a = {
-                {1, 1, 1},
-                {1, 1, 1},
-                {1, 1, 1}
-
+                     {1, 1, 1},
+                     {1, 1, 1},
+                     {1, 1, 1}
         };
 
         obj.allHamiltonPath(a);   //list all Hamiltonian paths of graph
@@ -73,8 +72,8 @@ public class HamiltonPath {
                 path[l] = i + 1;    //correspond to the array that start at 0, graph that start at point 1
                 if (l == len - 1) {//Except initial point already count =>success connect all point
                     count++;
-                    if (count == 1)
-                        System.out.println("Hamilton path of graph: ");
+                    //if (count == 1)
+                      //  System.out.println("Hamilton path of graph: ");
                     display(path);
                     l--;
                     continue;
@@ -90,12 +89,16 @@ public class HamiltonPath {
     }                     //possible hamilton path at new point(ignore newest point try another one)
 
     public void display(int[] x) {
-
-        System.out.print(count + " : ");
+        //for (int i : x) {
+        //    System.out.print(i + " ");
+        //}
+        //System.out.println();
+        System.out.print("( ");
         for (int i : x) {
             System.out.print(i + " ");
+
         }
-        System.out.println();
+        System.out.println(")");
     }
 
     private boolean detect(int[] x, int target) { //Detect duplicate point in Halmilton path

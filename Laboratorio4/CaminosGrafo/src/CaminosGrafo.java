@@ -45,7 +45,6 @@ public class CaminosGrafo {
             boolean[] visitados = new boolean[g.size()];
             for (int j = 0; j < g.size(); j++) {
                 if(i!=j) {
-
                     ArrayList<Integer> cam = caminosAux(g, i, j, visitados);
                     listaCaminos.add(cam);
                 }
@@ -60,13 +59,13 @@ public class CaminosGrafo {
         ArrayList<Integer> output = new ArrayList<>();
         output.add(p);
         for (int i = 0; i < sucesores.size(); i++) {
-            if (!visitados[sucesores.get(i)]) {
+            if (!visitados[sucesores.get(i)]&& p!=sucesores.get(i)) {
                 if (sucesores.get(i) == q) {
                     output.add(sucesores.get(i));
                     return output;
                 }
                 ArrayList<Integer> temp = caminosAux(g, sucesores.get(i), q, visitados);
-                if (temp.size() != 0) {
+                if (temp.size() != 0 && output.size()>visitados.length) {
                     output.addAll(temp);
                     return output;
                 }
