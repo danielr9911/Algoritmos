@@ -2,6 +2,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Collections;
 
 
 public class caminoNode {
@@ -9,37 +10,28 @@ public class caminoNode {
 
     public static void main(String[] args) {
 
-        Graph grafo = new GraphAM(6);
+        Graph grafo = new GraphAM(5);
 
 
         grafo.addArc(0, 1, 10);
         grafo.addArc(1, 0, 10);
-
         grafo.addArc(0, 2, 10);
         grafo.addArc(2, 0, 10);
-
         grafo.addArc(1, 2, 15);
         grafo.addArc(2, 1, 15);
-
         grafo.addArc(2, 3, 7);
         grafo.addArc(3, 2, 7);
-
         grafo.addArc(2, 4, 12);
         grafo.addArc(4, 2, 12);
-
         grafo.addArc(3, 4, 20);
         grafo.addArc(4, 3, 20);
-
         grafo.addArc(0, 4, 14);
         grafo.addArc(4, 0, 14);
-
         grafo.addArc(1, 4, 8);
         grafo.addArc(4, 1, 8);
 
-
         findPath(grafo, 0);
     }
-
     public static void findPath(Graph g, int v){
         ParejaAI caminoResultado;
 
@@ -57,12 +49,15 @@ public class caminoNode {
 
     }
 
-    public static ParejaAI findPathAux(Graph g, int v, boolean[] visitados, ArrayList<ParejaII> arcosVisitados,int inicial){
+    public static ParejaAI findPathAux(Graph g, int v, final  boolean[] visitados, final ArrayList<ParejaII> arcosVisitados,int inicial){
 
         ArrayList<Integer> camino = new ArrayList<>();
-        visitados[v] = true;
 
-        if(todosVisitados(visitados)&&hayArco(g,v,inicial)){
+        boolean[] visitados2 = visitados.clone();
+
+        visitados2[v] = true;
+
+        if(todosVisitados(visitados2)&&hayArco(g,v,inicial)){
             camino.add(v);
             camino.add(inicial);
 
@@ -73,24 +68,27 @@ public class caminoNode {
 
         camino.add(v);
         ArrayList<Integer> camino2 = new ArrayList<>();
-        int minimo = 19000;
+        int minimo = Integer.MAX_VALUE;
 
         ArrayList<Integer> sucesores = g.getSuccessors(v);
 
         for(Integer i : sucesores){
             if(!arcosVisitados.contains(new ParejaII(v,i))){
-                arcosVisitados.add(new ParejaII(v,i));
-                ParejaAI resultado = findPathAux(g,i,visitados,arcosVisitados,inicial);
+
+                ArrayList<ParejaII> arcosVisitados2 = new ArrayList<>(arcosVisitados);
+                arcosVisitados2.add(new ParejaII(v,i));
+                ParejaAI resultado = findPathAux(g,i,visitados2,arcosVisitados2,inicial);
+
                 if(resultado.getPeso() < minimo){
                     minimo = resultado.getPeso();
                     camino2 = resultado.getCamino();
-
                 }
             }
         }
 
         if(camino2.size() == 0){
-            minimo = 19000000;
+            minimo = Integer.MAX_VALUE;
+            return new ParejaAI(camino2,minimo);
         }else{
             minimo += g.getWeight(v,camino2.get(0));
         }
