@@ -10,25 +10,35 @@ public class caminoNode {
 
     public static void main(String[] args) {
 
-        Graph grafo = new GraphAM(5);
+        Graph grafo = new GraphAM(4);
+
+        grafo.addArc(0, 1, 1);
+        grafo.addArc(2, 0, 1);
+
+        grafo.addArc(1, 2, 10);
+        grafo.addArc(0, 3, 5);
+
+        grafo.addArc(3, 2, 1);
 
 
-        grafo.addArc(0, 1, 10);
-        grafo.addArc(1, 0, 10);
-        grafo.addArc(0, 2, 10);
-        grafo.addArc(2, 0, 10);
-        grafo.addArc(1, 2, 15);
-        grafo.addArc(2, 1, 15);
-        grafo.addArc(2, 3, 7);
-        grafo.addArc(3, 2, 7);
-        grafo.addArc(2, 4, 12);
-        grafo.addArc(4, 2, 12);
-        grafo.addArc(3, 4, 20);
-        grafo.addArc(4, 3, 20);
-        grafo.addArc(0, 4, 14);
-        grafo.addArc(4, 0, 14);
-        grafo.addArc(1, 4, 8);
-        grafo.addArc(4, 1, 8);
+//        grafo.addArc(0, 1, 10);
+//        grafo.addArc(1, 0, 10);
+//        grafo.addArc(0, 2, 10);
+//        grafo.addArc(2, 0, 10);
+//        grafo.addArc(1, 2, 15);
+//        grafo.addArc(2, 1, 15);
+//        grafo.addArc(2, 3, 7);
+//        grafo.addArc(3, 2, 7);
+//        grafo.addArc(2, 4, 12);
+//        grafo.addArc(4, 2, 12);
+//        grafo.addArc(3, 4, 20);
+//        grafo.addArc(4, 3, 20);
+//        grafo.addArc(0, 4, 14);
+//        grafo.addArc(4, 0, 14);
+//        grafo.addArc(1, 4, 8);
+//        grafo.addArc(4, 1, 8);
+//        grafo.addArc(3, 5, 10);
+//        grafo.addArc(5, 3, 30);
 
         findPath(grafo, 0);
     }
@@ -57,13 +67,13 @@ public class caminoNode {
 
         visitados2[v] = true;
 
-        if(todosVisitados(visitados2)&&hayArco(g,v,inicial)){
-            camino.add(v);
-            camino.add(inicial);
-
-            return new ParejaAI(camino,g.getWeight(v,inicial));
-
-        }
+//        if(todosVisitados(visitados2)&&hayArco(g,v,inicial)){
+//            camino.add(v);
+//            camino.add(inicial);
+//
+//            return new ParejaAI(camino,g.getWeight(v,inicial));
+//
+//        }
 
 
         camino.add(v);
@@ -74,7 +84,12 @@ public class caminoNode {
 
         for(Integer i : sucesores){
             if(!arcosVisitados.contains(new ParejaII(v,i))){
+                if(todosVisitados(visitados2)&&i==inicial){
+                    camino.add(i);
 
+                    return new ParejaAI(camino,g.getWeight(v,i));
+
+                }
                 ArrayList<ParejaII> arcosVisitados2 = new ArrayList<>(arcosVisitados);
                 arcosVisitados2.add(new ParejaII(v,i));
                 ParejaAI resultado = findPathAux(g,i,visitados2,arcosVisitados2,inicial);
