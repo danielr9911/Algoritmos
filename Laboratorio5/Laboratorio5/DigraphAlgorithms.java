@@ -108,8 +108,15 @@ public class DigraphAlgorithms
         System.out.println("El peso costo total es: "+ pesoTotal);
         return respuesta;
      }
-     
-     // Tarea, mezclar esto con Dijkstra y listo el lab y el proyecto :o
+     //Tomado de clase de estructuras de datos y algoritmos 2
+	/**
+	 * Este metodo produce todos los circuitos posibles en un grafo por fuerza bruta. No se puede
+	 * repetir arco y si vertice.
+	 * @param g es el grafo que vamos a analizar
+	 * @param porDondeEmpezar es el nodo por donde debe ir al principio y volver
+	 * @author Mauricio Toro & Juan Daniel Morales Daniel Rendon Cristyam Sepulveda
+	 * @version 1
+	 */
      public static int[] agenteViajero(Graph g, int porDondeEmpezar)
      {
          boolean[] porAquiYaPase = new boolean[g.size()];
