@@ -77,37 +77,37 @@ public class DigraphAlgorithms
         System.out.println("}");
      }
      
-     public static void(Graph g,int conductores){
-         int[] respuesta = new int [conductores];
-         
-         boolean[] porAquiYaPase = new boolean[g.size()];
-         int pesoTotal = 0;
-         int[] respuesta = new int[g.size() + 1];
-         int indiceRespuesta = 0;
-         int actual = porDondeEmpezar;
-         do {int elMasCerquita = -1;
-             int elPesoAlMasCerquita = 1000000; //infinito
-             porAquiYaPase[actual] = true;
-             ArrayList<Integer> aDondePuedoLlegar = g.getSuccessors(actual);
-             for (int i = 0; i < aDondePuedoLlegar.size(); i++)
-              if (g.getWeight(actual,aDondePuedoLlegar.get(i)) < elPesoAlMasCerquita 
-                && aDondePuedoLlegar.get(i) != actual 
-                && !porAquiYaPase[aDondePuedoLlegar.get(i)] )
-              {   elMasCerquita = aDondePuedoLlegar.get(i);
-                elPesoAlMasCerquita = g.getWeight(actual,aDondePuedoLlegar.get(i));
-              }
-              
-             respuesta[indiceRespuesta++] = actual;
-             
-             actual = elMasCerquita;
-             if(actual!=-1)
-             pesoTotal+=g.getWeight(respuesta[indiceRespuesta-1],actual);
-        } while (indiceRespuesta < g.size());
-        respuesta[indiceRespuesta] = porDondeEmpezar; 
-        pesoTotal+=g.getWeight(respuesta[indiceRespuesta-1],porDondeEmpezar);
-        System.out.println("El peso costo total es: "+ pesoTotal);
-        return respuesta;
-     }
+//      public static void(Graph g,int conductores){
+//          int[] respuesta = new int [conductores];
+//          
+//          boolean[] porAquiYaPase = new boolean[g.size()];
+//          int pesoTotal = 0;
+//          int[] respuesta = new int[g.size() + 1];
+//          int indiceRespuesta = 0;
+//          int actual = porDondeEmpezar;
+//          do {int elMasCerquita = -1;
+//              int elPesoAlMasCerquita = 1000000; //infinito
+//              porAquiYaPase[actual] = true;
+//              ArrayList<Integer> aDondePuedoLlegar = g.getSuccessors(actual);
+//              for (int i = 0; i < aDondePuedoLlegar.size(); i++)
+//               if (g.getWeight(actual,aDondePuedoLlegar.get(i)) < elPesoAlMasCerquita 
+//                 && aDondePuedoLlegar.get(i) != actual 
+//                 && !porAquiYaPase[aDondePuedoLlegar.get(i)] )
+//               {   elMasCerquita = aDondePuedoLlegar.get(i);
+//                 elPesoAlMasCerquita = g.getWeight(actual,aDondePuedoLlegar.get(i));
+//               }
+//               
+//              respuesta[indiceRespuesta++] = actual;
+//              
+//              actual = elMasCerquita;
+//              if(actual!=-1)
+//              pesoTotal+=g.getWeight(respuesta[indiceRespuesta-1],actual);
+//         } while (indiceRespuesta < g.size());
+//         respuesta[indiceRespuesta] = porDondeEmpezar; 
+//         pesoTotal+=g.getWeight(respuesta[indiceRespuesta-1],porDondeEmpezar);
+//         System.out.println("El peso costo total es: "+ pesoTotal);
+//         return respuesta;
+//      }
      //Tomado de clase de estructuras de datos y algoritmos 2
 	/**
 	 * Este metodo produce todos los circuitos posibles en un grafo por fuerza bruta. No se puede
@@ -164,7 +164,7 @@ public class DigraphAlgorithms
      dgal2.addArc(1,1,0);
      
      DigraphAlgorithms.dibujarGrafo(dgal2);
-     System.out.println("La ruta es: "Arrays.toString(DigraphAlgorithms.agenteViajero(dgal2, 0)));
+     System.out.println("La ruta es: " + Arrays.toString(DigraphAlgorithms.agenteViajero(dgal2, 0)));
     // System.out.println(Arrays.toString(DigraphAlgorithms.agenteViajero(dgal, 0)));
 
      
